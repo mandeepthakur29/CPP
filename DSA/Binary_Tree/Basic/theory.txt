@@ -1,0 +1,25 @@
+Some Important Terms:
+
+1.) Node: A node is a basic unit of a tree data structure. Each node contains data and may have links to other 
+        nodes. Nodes represent elements in the tree.
+
+2.) Root:The root is the topmost node of a tree. It is the only node in the tree that has no parent. All other 
+        nodes in the tree are descendants of the root.
+
+3.) Children: Children are nodes that are directly connected to another node when moving away from the root. A 
+            node can have zero or more children. In a binary tree, each node can have at most two children.
+
+4.) Parent: A parent is a node that has one or more children. The parent node is directly connected to its children 
+            nodes. In other words, if node A has a direct link to node B, then A is the parent of B.
+
+5.) Sibling: Siblings are nodes that share the same parent. For example, if node A is the parent of both node B and 
+            node C, then node B and node C are siblings.
+
+6.) Ancestor: An ancestor of a node is any node that is on the path from the root to that node. This includes the 
+            node itself, its parent, its parent's parent, and so on up to the root.
+
+7.) Descendant: A descendant of a node is any node that is on the path from that node to the leaf nodes. This 
+                includes the node itself, its children, its children's children, and so on down to the leaf nodes.
+
+8.) Leaf: A leaf is a node that has no children. In other words, it is a node at the bottom of the tree, with no 
+        further nodes connected below it.

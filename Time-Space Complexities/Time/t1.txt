@@ -1,0 +1,17 @@
+Time complexity is a measure used to analyze the efficiency of an algorithm in terms of the amount of time it takes to run as a 
+function of the input size. It describes how the runtime of an algorithm grows with the size of the input.
+
+Time complexity is typically expressed using Big O notation, which provides an upper bound on the growth rate of the runtime. 
+It helps us understand how the algorithm scales as the input size increases.
+
+
+For example:
+
+1.) An algorithm with a time complexity of O(1) means that its runtime is constant, regardless of the input size.
+2.) An algorithm with a time complexity of O(n) means that its runtime grows linearly with the input size. If the input size doubles, 
+    the runtime also doubles.
+3.) An algorithm with a time complexity of O(n^2) means that its runtime grows quadratically with the input size. If the input size 
+    doubles, the runtime becomes four times as long.
+
+Time complexity is an important concept in algorithm analysis because it allows us to compare different algorithms and choose the 
+most efficient one for a given problem. It also helps in predicting the performance of an algorithm as the input size grows larger.

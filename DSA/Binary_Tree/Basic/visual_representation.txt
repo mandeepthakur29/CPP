@@ -1,0 +1,21 @@
+                                VISUAL REPRESENTATION
+ 
+                                        A
+                                       / \
+                                      B   C
+                                     / \   \
+                                    D   E   F
+
+
+=> Node: A, B, C, D, E, and F are all nodes.
+=> Root: A is the root.
+=> Children: B and C are children of A; D and E are children of B; F is a child of C.
+=> Parent: A is the parent of B and C; B is the parent of D and E; C is the parent of F.
+=> Sibling: B and C are siblings; D and E are siblings.
+=> Ancestor: A is an ancestor of B, C, D, E, and F; B is an ancestor of D and E.
+=> Descendant: B, C, D, E, and F are descendants of A; D and E are descendants of B.
+=> Leaf: D, E, and F are leaves, as they have no children.
+
+
+Understanding these terms is crucial for working with tree data structures, as they form the basis for many 
+tree-related algorithms and operations.

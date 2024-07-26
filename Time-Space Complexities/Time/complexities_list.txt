@@ -1,0 +1,15 @@
+Here's a list of common time complexities in ascending order:
+
+O(1) - Constant time complexity ------->(BEST)
+O(log n) - Logarithmic time complexity
+O(n) - Linear time complexity
+O(n log n) - Linearithmic time complexity
+O(n^2) - Quadratic time complexity
+O(n^3) - Cubic time complexity
+O(2^n) - Exponential time complexity
+O(n!) - Factorial time complexity -------->(WORST)
+
+
+This list represents some of the most common time complexities encountered in algorithm analysis, arranged in ascending order 
+of their growth rates. Algorithms with lower time complexities are generally more efficient than those with higher time 
+complexities for large input sizes.
