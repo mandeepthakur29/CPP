@@ -2,11 +2,13 @@
 #include <string>
 #include <algorithm>
 #include <queue>
-#include <sstream>
-#include <vector>
+#include <sstream>  // For istringstream
+#include <vector>   // For vector
 
 using namespace std;
 
+/* A binary tree node has data, pointer to left child
+   and a pointer to right child */
 struct Node {
     int data;
     struct Node* left;
@@ -52,14 +54,16 @@ class Solution {
 
         return ans;
     }
-
     int diameter(Node* root) {
+    
         return diameterFast(root).first;
+        
     }
 };
 
-int main() 
-{
+// { Driver Code Starts.
+/* Driver program to test size function*/
+int main() {
     // Manually creating the binary tree
     // Example tree:
     //      1
@@ -86,3 +90,4 @@ int main()
 
     return 0;
 }
+// } Driver Code Ends
