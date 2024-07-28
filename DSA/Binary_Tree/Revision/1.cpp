@@ -1,121 +1,60 @@
 #include <iostream>
-#include <queue>
-#include <stack>
+#include <algorithm>
 
-class node
-{
+class Node{
+
     public:
         int data;
-        node* left;
-        node* right;
+        Node* left;
+        Node* right;
 
-    node(int d)
-    {
-        this->data = d;
-        this->left = NULL;
-        this->right = NULL;
-    }
+        Node(int d)
+        {
+            this->data = d;
+            this->left = NULL;
+            this->right = NULL;
+        }
 };
 
-// node* buildTree(node* root)
-// {
-//     std::cout<<"Enter data: ";
-//     int data;
-//     std::cin>>data;
+int height(Node* root){
+    if(root == NULL)
+        return 0;
 
-//     if(data == -1){
-//         return NULL;
-//     }
+    int left = height(root->left);
+    int right = height(root->right);
 
-//     root = new node(data);
-
-//     std::cout<<"Enter the left side data of "<<data;
-//     root->left = buildTree(root->left);
-
-//     std::cout<<"Enter the right side data of "<<data;
-//     root->right = buildTree(root->right);
-
-//     return root;
-// }
-
-void printingTree(node* root)
-{
-    std::queue<node*> q;
-    q.push(root);
-    q.push(NULL);
-
-    while(!q.empty())
-    {
-        node* temp = q.front();
-        q.pop();
-
-        if(temp == NULL){
-            std::cout<<std::endl;
-
-            if(!q.empty()){
-                q.push(NULL);
-            }
-        }
-        else
-        {
-            std::cout<<temp->data<<" ";
-
-            if(temp->left){
-                q.push(temp->left);
-            }
-            if(temp->right){
-                q.push(temp->right);
-            }
-        }
-    }
+    return std::max(left, right)+1;
 }
 
-void reverseLOT(node* root)
+std::pair<int,int> diameterFast(Node* root)
 {
-    std::queue<node*> q;
-    std::stack<node*> s;
-    q.push(root);
-    q.push(NULL);
-
-    while(!q.empty())
-    {
-        node* temp = q.front();
-        q.pop();
-        s.push(temp);
-        
-        if(temp->left){
-            q.push(temp->left);
-        }
-        if(temp->right){
-            q.push(temp->right);
-        }
+    if(root == NULL){
+        std::pair<int,int>p = std::make_pair(0,0);
+        return p;
     }
 
-    while(!s.empty()){
-        node*temp = s.top();
-        s.pop();
-        std::cout<<temp->data<<" ";
-    }
+    
 }
 
-void createTreeFromLevelOrder(node* &root)
-{
-    std::queue<node*> q;
-    std::cout<<"Enter data for root: ";
-    int data;
-    std::cin>>data;
-    root = new node(data);
-    q.push(root);
+int diameterUtil(Node* root){
+    if(root == NULL)
+        return 0;
 
+    int op1 = diameterUtil(root->left);
+    int op2 = diameterUtil(root->right);
+    int op3 = height(root->left) + 1 + height(root->right);
 
+    int ans = std::max(op1, std::max(op2, op3));
+    return ans;
 }
 
 int main()
 {
-    node* root = NULL;
+    Node* root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
 
-    createTreeFromLevelOrder(root);
-    //root = buildTree(root);
-    printingTree(root);
-    reverseLOT(root);
+    std::cout<<"Diameter of tree: "<<diameterUtil(root);
 }
