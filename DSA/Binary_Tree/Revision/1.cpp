@@ -16,16 +16,6 @@ class Node{
         }
 };
 
-int height(Node* root){
-    if(root == NULL)
-        return 0;
-
-    int left = height(root->left);
-    int right = height(root->right);
-
-    return std::max(left, right)+1;
-}
-
 std::pair<int,int> diameterFast(Node* root)
 {
     if(root == NULL){
@@ -33,19 +23,25 @@ std::pair<int,int> diameterFast(Node* root)
         return p;
     }
 
+    std::pair<int,int> left = diameterFast(root->left);
+    std::pair<int,int> right = diameterFast(root->right);
+
+    int op1 = left.first;
+    int op2 = right.first;
+    int op3 = left.second + right.second + 1;
+
+    std::pair<int,int> ans;
     
+    ans.first = std::max(op1, std::max(op2, op3));
+    ans.second = std::max(left.second, right.second)+1;
+
+    return ans;
 }
 
-int diameterUtil(Node* root){
-    if(root == NULL)
-        return 0;
-
-    int op1 = diameterUtil(root->left);
-    int op2 = diameterUtil(root->right);
-    int op3 = height(root->left) + 1 + height(root->right);
-
-    int ans = std::max(op1, std::max(op2, op3));
-    return ans;
+int diameter(Node* root){
+    std::pair<int,int> ans;
+    ans = diameterFast(root);
+    return ans.first;
 }
 
 int main()
@@ -56,5 +52,5 @@ int main()
     root->left->left = new Node(4);
     root->left->right = new Node(5);
 
-    std::cout<<"Diameter of tree: "<<diameterUtil(root);
+    std::cout<<"Diameter of tree: "<<diameter(root);
 }

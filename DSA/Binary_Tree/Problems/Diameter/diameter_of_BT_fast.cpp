@@ -7,8 +7,6 @@
 
 using namespace std;
 
-/* A binary tree node has data, pointer to left child
-   and a pointer to right child */
 struct Node {
     int data;
     struct Node* left;
@@ -18,27 +16,12 @@ struct Node {
 };
 
 class Solution {
-  private:
-    int height(struct Node* node){
-        //base case
-        if(node == NULL) {
-            return 0;
-        }
-        
-        int left = height(node ->left);
-        int right = height(node->right);
-        
-        int ans = max(left, right) + 1;
-        return ans;
-    }
   public:
-    // Function to return the diameter of a Binary Tree.
     
     pair<int,int> diameterFast(Node* root) {
         //base case
         if(root == NULL) {
-            pair<int,int> p = make_pair(0,0);
-            return p;
+            return make_pair(0,0);
         }
         
         pair<int,int> left = diameterFast(root->left);
@@ -61,8 +44,6 @@ class Solution {
     }
 };
 
-// { Driver Code Starts.
-/* Driver program to test size function*/
 int main() {
     // Manually creating the binary tree
     // Example tree:
@@ -90,4 +71,3 @@ int main() {
 
     return 0;
 }
-// } Driver Code Ends
