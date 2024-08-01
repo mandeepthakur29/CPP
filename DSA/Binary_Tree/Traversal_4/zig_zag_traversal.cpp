@@ -2,6 +2,7 @@
 #include <vector>
 #include <queue>
 
+// Definition for a binary tree node.
 struct Node {
     int data;
     Node* left;
@@ -10,39 +11,54 @@ struct Node {
 };
 
 std::vector<int> zigZagTraversal(Node* root) {
+    // Result vector to store the final zigzag order traversal
     std::vector<int> result;
+    
+    // If the tree is empty, return the empty result vector
     if (root == NULL)
         return result;
 
+    // Queue to help with level-order traversal (BFS)
     std::queue<Node*> q;
-    q.push(root);
+    q.push(root);  // Start with the root node
 
+    // Boolean flag to indicate the direction of traversal
     bool leftToRight = true;
 
+    // Process nodes level by level
     while (!q.empty()) {
+        // Get the number of nodes at the current level
         int size = q.size();
+
+        // Temporary vector to store the current level's node values
         std::vector<int> ans(size);
 
-        // Level Process
+        // Process each node at the current level
         for (int i = 0; i < size; i++) {
+            // Get the front node from the queue
             Node* frontNode = q.front();
             q.pop();
 
-            // Normal insert or reverse insert
+            // Determine the position to insert the node's value in the ans vector
+            // If leftToRight is true, insert at index i (normal order)
+            // If leftToRight is false, insert at index size - i - 1 (reverse order)
             int index = leftToRight ? i : size - i - 1;
             ans[index] = frontNode->data;
 
+            // Add the left child to the queue if it exists
             if (frontNode->left)
                 q.push(frontNode->left);
 
+            // Add the right child to the queue if it exists
             if (frontNode->right)
                 q.push(frontNode->right);
         }
 
-        // Direction change
+        // Toggle the direction for the next level
         leftToRight = !leftToRight;
 
-        for (int i : ans) {
+        // Append the current level's values to the result vector
+        for (auto i : ans) {
             result.push_back(i);
         }
     }
@@ -50,15 +66,6 @@ std::vector<int> zigZagTraversal(Node* root) {
     return result;
 }
 
-// Helper function to print the result
-void printResult(const std::vector<int>& result) {
-    for (int val : result) {
-        std::cout << val << " ";
-    }
-    std::cout << std::endl;
-}
-
-// Example usage
 int main() {
     // Creating a sample binary tree:
     //         1
@@ -75,7 +82,12 @@ int main() {
     root->right->right = new Node(7);
 
     std::vector<int> result = zigZagTraversal(root);
-    printResult(result);
+
+    // Print the result
+    for (int val : result) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
 
     return 0;
 }
