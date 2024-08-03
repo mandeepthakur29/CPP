@@ -41,12 +41,8 @@ std::vector<int> topView(Node* root) {
         // Extract the node and its corresponding hd.
         Node* frontNode = temp.first;
         int hd = temp.second;
-
-        // If no node has been recorded at this hd before, record the current node.
-        // This ensures that only the topmost node at each hd is stored.
-        if (topNode.find(hd) == topNode.end()) {
-            topNode[hd] = frontNode->data;
-        }
+        
+        topNode[hd] = frontNode->data;
 
         // If the left child exists, push it onto the queue with updated hd.
         // The left child's hd is (hd - 1).
