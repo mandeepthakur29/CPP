@@ -1,0 +1,87 @@
+=> Graph theory is a field of mathematics and computer science that studies structures made 
+of nodes (or vertices) and edges (connections between nodes). Graphs can represent many 
+real-world problems, such as networks, social media connections, and routes.
+
+Graph (G): A graph 𝐺=(𝑉,𝐸) is defined by a set of vertices V (also called nodes) and a 
+set of edges 𝐸 that connect pairs of vertices.
+
+A.))) Types of Graphs:
+    a.) Undirected Graph:
+
+An undirected graph is one where the edges do not have any direction. In other words, 
+an edge between vertex u and vertex v means you can move from u to v and from v to u.
+Example: A social network connection, where friendship is mutual.
+
+=> Example:
+    A -- B -- C
+    |         |
+    D ------- E
+
+    b.) Directed Graph (Digraph):
+
+In a directed graph, the edges hav  e a direction. An edge from vertex u to vertex v 
+(denoted u→v) means you can move from u to v, but not necessarily from v to u.
+Example: A Twitter network where one person follows another, but the following isn't 
+necessarily mutual.
+
+=> Example:
+    A → B →  C
+    ↑        ↓
+    D ←----- E
+
+    c.) Weighted Graph:
+
+A weighted graph is one where each edge has an associated weight (or cost). The weight 
+could represent distances, costs, or time between vertices.
+Example: A road map where each road between cities has a distance or cost associated 
+with it.
+
+=> Example (Weighted):
+    A --10--- B
+    |         |
+    5         9
+    |         |
+    C ---7--- D
+
+    d.) Unweighted Graph:
+
+In an unweighted graph, all edges have the same weight, typically considered as 1. 
+This means that any connection is treated equally.
+
+B.))) Graph Terminology:
+
+1.)Degree of a Vertex: The degree of a vertex is the number of edges incident to it.
+    a.) In-degree (directed graph): The number of edges coming into a vertex.
+    b.) Out-degree (directed graph): The number of edges going out from a vertex.
+
+    => Example (In-degree and Out-degree):
+        A → B → C
+        ↑       ↓
+        D ←-----E
+
+        In-degree of B = 1, Out-degree of B = 1
+        In-degree of C = 1, Out-degree of C = 1
+
+2.) Path: A path is a sequence of edges that connect a sequence of vertices. A simple 
+    path does not repeat any vertices.
+
+=> Example: In an undirected graph, a path from A to D might look like 𝐴→𝐵→𝐷.
+
+3.) Connected Graph: A graph is said to be connected if there is a path between every 
+    pair of vertices. In a disconnected graph, some vertices are not connected.
+
+=> Example (Disconnected Graph):
+    A -- B     C -- D
+    In this graph, there is no path between A and C, so it's disconnected.
+
+4.) Complete Graph: A complete graph is one where there is an edge between every pair 
+    of vertices.
+
+=> Example (Complete Graph):
+    A -- B -- C
+    | \  |  / |
+    D -- E -- F
+
+C.))) Special Graphs:
+    1.) Tree: A tree is a connected, acyclic graph. It has 𝑛 vertices and 𝑛−1 edges, 
+        and it has no cycles.

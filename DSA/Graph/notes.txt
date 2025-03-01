@@ -1,0 +1,15 @@
+Summary of Key Concepts:
+
+A.) Vertices (V) -> The nodes or points in a graph.
+B.) Edges (E) -> The connections or lines between vertices.
+C.) Undirected Graph -> A graph where edges have no direction (mutual connection).
+D.) Directed Graph (Digraph) -> A graph where edges have direction (one-way connection).
+E.) Weighted Graph -> A graph where each edge has an associated weight (e.g., cost or distance).
+F.) Path -> A sequence of edges that connects a series of vertices.
+G.) Cycle -> A path where the start and end vertices are the same.
+H.) Connected Graph -> A graph where there is a path between every pair of vertices.
+I.) Tree -> A connected, acyclic graph.
+J.) Bipartite Graph -> A graph whose vertices can be divided into two sets where no vertices within the same set are adjacent.
+K.) DFS (Depth-First Search) -> A graph traversal technique that explores as far as possible along a path before backtracking.
+L.) BFS (Breadth-First Search) -> A graph traversal technique that explores neighbors level by level.
+M.) MST (Minimum Spanning Tree) -> A subgraph that connects all vertices with the minimum possible total edge weight and no cycles.
