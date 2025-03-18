@@ -19,7 +19,7 @@ Example: A social network connection, where friendship is mutual.
 
     b.) Directed Graph (Digraph):
 
-In a directed graph, the edges hav  e a direction. An edge from vertex u to vertex v 
+In a directed graph, the edges have a direction. An edge from vertex u to vertex v 
 (denoted u→v) means you can move from u to v, but not necessarily from v to u.
 Example: A Twitter network where one person follows another, but the following isn't 
 necessarily mutual.
